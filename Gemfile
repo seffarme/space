@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 
 #image uploader
-gem 'carrierwave'
+gem 'carrierwave', '~> 1.0'
 gem 'fog'
 
 #image resizing

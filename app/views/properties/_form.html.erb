@@ -26,10 +26,14 @@
     <%= form.number_field :bathrooms, class: 'form-control' %>
   </div>
 
-  <!-- <div class="field">
+  <div class="form-group">
     <%= form.label :photo %>
-    <%= form.text_field :photo, class: 'form-control' %>
-  </div> -->
+    <%= form.file_field :photo, class: 'form-control' %>
+
+    <% if @property.photo.present? %>
+      <%= image_tag @property.photo.url %>
+    <% end %>
+  </div>
 
 
   <div class="actions">
