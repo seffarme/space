@@ -1,21 +1,14 @@
 CarrierWave.configure do |config|
+
   config.fog_credentials = {
-    provider:               'AWS',
-    aws_access_key_id:      ENV['AWS_ACCESS_KEY_ID'],
-    aws_secret_access_key:  ENV['AWS_SECRET_ACCESS_KEY'],
-    region:                 'eu-west-3'
+    provider:              'AWS',                            # required
+    aws_access_key_id:     ENV["AWS_ACCESS_KEY"],            # required
+    aws_secret_access_key: ENV["AWS_SECRET_KEY"],            # required
+    region:                'us-east-1'                       # to match the carrierwave and bucket region
   }
+  config.fog_directory = ENV["AWS_BUCKET"]                   # required
+  config.fog_public    = false
+  config.cache_dir     = "#{Rails.root}/tmp/uploads"         # To let CarrierWave work on Heroku
+  config.storage       = :fog
 
-end
-
-module CarrierWave
-  module MiniMagick
-    def quality(percentage)
-      manipulate! do |img|
-        img.quality(percentage.to_s)
-        img = yield(img) if block_given?
-        img
-      end
-    end
-  end
 end

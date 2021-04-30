@@ -22,7 +22,7 @@
         <td><%= property.price %></td>
         <td><%= property.rooms %></td>
         <td><%= property.bathrooms %></td>
-        <td><%= property.photo %></td>
+        <td><%= image_tag property.photo.thumb.url %></td>
         <td><%= property.account_id %></td>
         <td><%= link_to 'Show', property %></td>
         <td><%= link_to 'Edit', edit_property_path(property) %></td>

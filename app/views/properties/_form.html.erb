@@ -31,7 +31,7 @@
     <%= form.file_field :photo, class: 'form-control' %>
 
     <% if @property.photo.present? %>
-      <%= image_tag @property.photo.url %>
+      <%= image_tag @property.photo.medium.url %>
     <% end %>
   </div>
 
