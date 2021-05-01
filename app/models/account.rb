@@ -6,4 +6,12 @@ class Account < ApplicationRecord
 
   validates :first_name, presence: true
   has_many :properties
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  def company
+    "test company"
+  end
 end

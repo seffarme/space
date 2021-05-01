@@ -1,0 +1,8 @@
+
+<% @properties.each do |property| %>
+  <div class="col-4">
+    <%=  link_to (image_tag property.photo.medium.url), property_path(property) %>
+    <p class="h4 mt-2"><%= link_to (property.name), property_path(property) %></p>
+    <p class="h6"><%= property.address %></p>
+  </div>
+<% end %>
